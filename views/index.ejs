@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+  	<% include ./partials/head %>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <body class="container">
+    
+    <header>
+    	<% include ./partials/header %>
+    </header>
+
+    <main>
+    	<div class="jumbotron">
+    		<h1>MetaMoo is Awesome</h1>
+    		<p>Welcome to possibilities</p>
+    	</div>
+
+    	<div class="jumbotron">
+    		<h1>This is where the search results will go</h1>
+    		<p>They will have content, tags, notes, source and date info.</p>
+    	</div>
+
+    </main>
+
+    <footer>
+    	<% include ./partials/footer %>
+    </footer>
+
   </body>
 </html>
