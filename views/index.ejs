@@ -3,33 +3,76 @@
   <head>
   	<% include ./partials/head %>
   </head>
-  <body class="container-fluid">
-    
+  <body>
+
     <header>
-    	<% include ./partials/header %>
+      <% include ./partials/header %>
     </header>
 
     <main>
-    	<div class="jumbotron">
-    		<h1>MetaMoo</h1>
-    		<p>Welcome to possibilities</p>
-    	</div>
+      <div class="container jumbotron">
+        <div class="row">
+        <!-- Metamoo logo -->
+        <h1> MetaMoo </h1>
+        </div>
 
-    	<div class="jumbotron">
-    		<h1>This is where the search results will go</h1>
-    		<p>They will have content, tags, notes, source and date info.</p>
-    	</div>
+        <div class = "row">
+        <!-- For search bar and searh button -->
+          <div class="row search">
+            <div class="col-sm-8 col-sm-offset-2">
+              <form role="form">
+                <div class="input-group">
+                  <input type="text" class="form-control input-sm">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default btn-sm" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                  </span>
+                  &nbsp;<a href="#">Search Help</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
 
-    <h2> Data </h2>
-    <p>Content is: <%= appdata[1].content %></p>
+      </div>
 
-	<p>Tag is: <%= appdata[1].tag %></p>
-    
+      <div class="container">
+        <div class="row">
+          <!-- Master row for each snippet of data -->
+          <div class="row">
+            <!-- Minor top row -->
+            <div class="col-md-4">
+              <p> Content </p>
+            </div>
+
+            <div class="col-md-4">
+              <p> Tags </p>
+            </div>
+            
+            <div class="col-md-4">
+              <p> Notes </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Minor bottom row -->
+            <div class="col-md-6">
+              <p> Source </p>
+            </div>
+
+            <div class="col-md-6">
+              <p> Date </p>
+            </div>
+            
+          </div>
+
+
+        </div>
+
+      </div>
     </main>
 
     <footer>
-    	<% include ./partials/footer %>
-    </footer>
-
-  </body>
+      <% include ./partials/footer %>
+    </footer>  
+  </body>  
 </html>
