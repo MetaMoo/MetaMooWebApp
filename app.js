@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.locals.appdata = require('./metamoo_data.json'); // note this does not put appdata in routes
 app.use('/', routes);
 
 /// catch 404 and forward to error handler

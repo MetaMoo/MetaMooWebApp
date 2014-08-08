@@ -3,7 +3,7 @@
   <head>
   	<% include ./partials/head %>
   </head>
-  <body class="container">
+  <body class="container-fluid">
     
     <header>
     	<% include ./partials/header %>
@@ -11,7 +11,7 @@
 
     <main>
     	<div class="jumbotron">
-    		<h1>MetaMoo is Awesome</h1>
+    		<h1>MetaMoo</h1>
     		<p>Welcome to possibilities</p>
     	</div>
 
@@ -20,6 +20,11 @@
     		<p>They will have content, tags, notes, source and date info.</p>
     	</div>
 
+    <h2> Data </h2>
+    <p>Content is: <%= appdata[1].content %></p>
+
+	<p>Tag is: <%= appdata[1].tag %></p>
+    
     </main>
 
     <footer>
