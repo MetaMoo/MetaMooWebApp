@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var appdata = require('../metamoo_data.json');
+var MetamooSchema = require('../schemas/metamoo');
 
 /* GET home page. */
 router.get('/', function(req, res) {
