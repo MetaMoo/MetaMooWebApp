@@ -3,7 +3,9 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 var routes = require('./routes/index'); //default index route
+
 var app = express();
 var db = require('./db');
 
@@ -19,9 +21,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Pulling in stuff from the metamoo_data file
-app.locals.appdata = require('./metamoo_data.json'); // note this does not put appdata in routes
+// note this does not put appdata in routes
+app.locals.appdata = require('./metamoo_data.json'); 
+
 
 app.use('/', routes);
+
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
