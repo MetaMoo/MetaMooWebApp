@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Pulling in stuff from the metamoo_data file
 // note this does not put appdata in routes
-app.locals.appdata = require('./metamoo_data.json'); 
+//app.locals.appdata = require('./metamoo_data.json'); 
 
 
 app.use('/', routes);

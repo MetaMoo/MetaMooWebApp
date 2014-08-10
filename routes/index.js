@@ -1,38 +1,27 @@
 var express = require('express');
 var router = express.Router();
-var appdata = require('../metamoo_data.json');
-var MetamooSchema = require('../schemas/metamoo');
+//var appdata = require('../metamoo_data.json');
+
+//MetamooSchema object is a chainable object that we can use to build a query
+var MetamooSchema = require('../schemas/metamoo'); 
 
 /* GET home page. */
 router.get('/', function(req, res) {
 
-	// test data
-	//var snippets = [{content: "Test snippet of data", tag: "#awesome"},{content: "Test 2 snippet of data", tag: "#cool"}];
-
   res.render('index', {title: 'Home'});
 });
 
-/* GET search results page. */
+/* GET search results page. You get to this page from typing in something
+in the search bar and then hitting enter (see jQuery script in /javascripts/main.js*/ 
 router.get('/searching', function(req, res) {
 
-	// test data
-	//var snippets = [{content: "Test snippet of data", tag: "#awesome"},{content: "Test 2 snippet of data", tag: "#cool"}];
+	var val = req.query.search;
 
- var val = req.query.search;
-
-// Below code takes "val" as input and outputs "data" which is an object
-// array that contains objects that have matching tags. 
-var objects = [];
-var obj = appdata;
-for (var i in obj) {
-    //if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
-    if (obj[i].tag == val) { //
-        objects.push(obj[i]);
-    } 
-}
-var data = objects;
-
- res.send(data);
+	MetamooSchema.find({ tag: val }).exec(function (err, docs) { 
+		if (err) throw err; 
+		data = docs; 
+		res.send(data);
+	});	
 
 });
 
