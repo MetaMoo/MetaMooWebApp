@@ -3,8 +3,16 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var methodOverride = require('method-override');
 
-var routes = require('./routes/index'); //default index route
+
+//var routes = require('./routes/index'); //default index route
+var routes = require('./routes'); //default index route
+
+var mongoose = require('mongoose'); //installed with passport
+var passport = require('passport'); //installed with passport
+var LocalStrategy = require('passport-local').Strategy; //installed with passport
 
 var app = express();
 var db = require('./db');
@@ -15,14 +23,27 @@ app.set('view engine', 'ejs');
 
 // middleware
 app.use(logger('dev'));
+app.use(passport.initialize()); //installed while setting up passport
+app.use(passport.session());
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(methodOverride()); //installed while setting up passport
 app.use(cookieParser());
+app.use(session({secret : 'keyboard cat'})); //installed while setting up passport
+
+//app.use(app.router); //installed while setting up passport
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Pulling in stuff from the metamoo_data file
 // note this does not put appdata in routes
 //app.locals.appdata = require('./metamoo_data.json'); 
+
+//Passport config
+var Account = require('./schemas/account');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
 
 
 app.use('/', routes);

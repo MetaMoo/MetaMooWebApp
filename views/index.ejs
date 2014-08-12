@@ -7,6 +7,15 @@
 
     <header>
      <!-- <% include ./partials/header %> -->
+     <% if (!user) {%> 
+     <a href="/login">Login</a>
+     <br> 
+     <a href="/register">Register</a>
+     <% } %>
+     <% if (user) {%> 
+    <p> Welcome <%= user %> </p>
+     <a href="/logout">Logout</a>
+     <% } %>
     </header>
 
     <main>
