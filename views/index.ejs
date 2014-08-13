@@ -13,7 +13,7 @@
      <a href="/register">Register</a>
      <% } %>
      <% if (user) {%> 
-    <p> Welcome <%= user %> </p>
+    <p> Welcome <%= user.local.email %> </p>
      <a href="/logout">Logout</a>
      <% } %>
     </header>

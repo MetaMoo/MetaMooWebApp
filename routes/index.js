@@ -69,7 +69,7 @@ router.get('/logout',function(req,res){
 });
 
 /* GET Main search page. */
-router.get('/profile', function(req, res) {
+router.get('/profile', isLoggedIn, function(req, res) {
   	res.render('index', {user : req.user});
 });
 
