@@ -5,11 +5,12 @@ var passport = require('passport');
 
 //MetamooSchema object is a chainable object that we can use to build a query
 var MetamooSchema = require('../schemas/metamoo'); 
-var Account = require('../schemas/account');
+//var Account = require('../schemas/account');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  		res.render('index', {user : req.user});
+  	res.render('home',{ message: req.flash('loginMessage') });
+  	//res.render('index', {user : req.user});
 });
 
 /* GET search results page. 
@@ -30,27 +31,33 @@ router.post('/chromeplugin',function(req, res){
 // push to db
 });
 
-router.get('/register',function(req,res){
-	res.render('register',{ });
+router.get('/signup',function(req,res){
+	res.render('signup',{message: req.flash('signupMessage')  });
 });
 
-router.post('/register',function(req,res){
-	Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account){
-		if (err) {
-			return res.render('register', {account : account});
-		}
+router.post('/signup',passport.authenticate('local-signup', {
+	successRedirect : '/profile',
+	failureRedirect : '/signup',
+	failureFlash : true
+}));
+	
+	// Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account){
+	// 	if (err) {
+	// 		return res.render('signup', {account : account});
+	// 	}
 
-		passport.authenticate('local')(req, res, function(){
-			res.redirect('/');
-		});
-	});
-});
+	// 	passport.authenticate('local')(req, res, function(){
+	// 		res.redirect('/');
+	// 	});
+	// });
 
 router.get('/login', function(req,res){
-	res.render('login', { user: req.user });
+	res.render('login', { message: req.flash('loginMessage') });
+	//res.render('login', { user: req.user });
 });
 
 router.post('/login', passport.authenticate('local'), function(req,res){
+	// process login form here
 	res.redirect('/');
 });
 
@@ -59,9 +66,23 @@ router.get('/logout',function(req,res){
 	res.redirect('/');
 });
 
+/* GET Main search page. */
+router.get('/profile', function(req, res) {
+  	res.render('index', {user : req.user});
+});
+
 router.get('/ping', function(req,res){
 	res.send("pong!", 200);
 });
+
+function isLoggedIn(req, res, next){
+
+	//if user is authenticated in the session, carry on
+	if (req.isAuthenticated())
+		return next();
+	//if they aren't redirect them to home page
+	res.redirect('/');
+}
 
 
 module.exports = router;
