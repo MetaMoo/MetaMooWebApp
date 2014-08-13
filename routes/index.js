@@ -56,10 +56,12 @@ router.get('/login', function(req,res){
 	//res.render('login', { user: req.user });
 });
 
-router.post('/login', passport.authenticate('local'), function(req,res){
+router.post('/login', passport.authenticate('local-login',{
 	// process login form here
-	res.redirect('/');
-});
+	successRedirect : '/profile',
+	failureRedirect : '/login',
+	failureFlash : true
+}));
 
 router.get('/logout',function(req,res){
 	req.logout();

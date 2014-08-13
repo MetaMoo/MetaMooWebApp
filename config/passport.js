@@ -65,4 +65,34 @@ module.exports = function(passport){
 
 		});
 	}));
+
+
+	//LOCAL LOGIN
+
+	passport.use('local-login', new LocalStrategy({
+		usernameField	: 'email',
+		passwordField 	: 'password',
+		passReqToCallback : true
+	},
+	function(req, email, password, done){
+		// find a user whose email is the same as that in the form
+		// we are checking if user trying to login already exists
+
+		User.findOne({ 'local.email' : email}, function(err, user){
+			if (err)
+				return done(err);
+			// if no user is found return a message
+			if(!user)
+				return done(null, false, req.flash('loginMessage', 'No user found.'));
+
+			// if user is found but password is wrong
+			if (!user.validPassword(password))
+				return done(null, false, req.flash('loginMessage','Oops! Wrong password.'));
+			
+			// all is well, return successful user
+			return done(null, user);
+
+		});
+
+	}));
 };
