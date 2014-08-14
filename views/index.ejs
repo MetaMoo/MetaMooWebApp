@@ -4,78 +4,15 @@
   <% include ./partials/head %>
 
   <body>
+  
+  <% include ./partials/header %>
 
-    <header>
-     <!-- <% include ./partials/header %> -->
-<!--      <% if (!user) {%> 
-     <a href="/login">Login</a>
-     <br> 
-     <a href="/register">Register</a>
-     <% } %>
-     <% if (user) {%> 
-    <p> Welcome <%= user.local.email %> </p>
-     <a href="/logout">Logout</a>
-     <% } %>
-     <p> Twitter name: <%= user.twitter.displayName %></p>
-     <p> Google email: <%= user.google.email %></p> -->
-
-     <div>
-      <h3> Local </h3>
-      <% if (user.local.email) {%>
-        <p>
-          <strong>id</strong>: <%= user._id %><br>
-          <strong>email</strong>: <%= user.local.email %><br>
-          <strong>password</strong>: <%= user.local.password %><br>
-        </p>
-        <a href="/unlink/local" class="btn btn-default">Unlink</a>
-      <%} else { %>
-        <a href="/connect/local" class="btn btn-default">Connect Local</a>
-        <% } %>
-     </div>
-
-
-     <div>
-      <h3> Twitter </h3>
-      <% if (user.twitter.token) {%>
-        <p>
-          <strong>id</strong>: <%= user.twitter.id %><br>
-          <strong>token</strong>: <%= user.twitter.token %><br>
-          <strong>display name</strong>: <%= user.twitter.displayName %><br>
-          <strong>username</strong>: <%= user.twitter.username %><br>
-        </p>
-        <a href="/unlink/twitter" class="btn btn-default">Unlink</a>
-      <%} else { %>
-        <a href="/connect/twitter" class="btn btn-default">Connect Twitter</a>
-        <% } %>
-     </div>
-
-      <div>
-      <h3> Google </h3>
-      <% if (user.google.token) {%>
-        <p>
-          <strong>id</strong>: <%= user.google.id %><br>
-          <strong>token</strong>: <%= user.google.token %><br>
-          <strong>email</strong>: <%= user.google.email %><br>
-          <strong>name</strong>: <%= user.google.name %><br>
-        </p>
-        <a href="/unlink/google" class="btn btn-default">Unlink</a>
-      <%} else { %>
-        <a href="/connect/google" class="btn btn-default">Connect Google</a>
-        <% } %>
-     </div>
-
-
-    </header>
 
     <main>
       <div class="container">
         <div class="row">
         <!-- Metamoo logo -->
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <img src="/images/main_logo.png" class="img-responsive text-center" alt="Responsive image">
-          </div>
-          <div class="col-md-4"></div>
+        <img src="/images/main_logo.png" class="img-responsive text-center" style="float:none; margin:0 auto">
         </div>
 
        
