@@ -142,7 +142,7 @@ module.exports = function(passport){
 						if (!user.twitter.token){
 							user.twitter.token = token;
 							user.twitter.username = profile.username;
-							user.facebook.displayName = profile.displayName;
+							user.twitter.displayName = profile.displayName;
 
 							user.save(function(err){
 								if (err)
@@ -174,7 +174,7 @@ module.exports = function(passport){
 				//user already exists and is logged in, we have to link accounts
 				var user 					= req.user; //pull user out of session
 
-				// update the current users facebook credentials
+				// update the current users twitter credentials
 				user.twitter.id 			= profile.id;
 				user.twitter.token 			= token;
 				user.twitter.username 		= profile.username;
@@ -261,7 +261,7 @@ module.exports = function(passport){
 		    	//user already exists and is logged in, we have to link accounts
 				var user 					= req.user; //pull user out of session
 
-				// update the current users facebook credentials
+				// update the current users twitter credentials
 				user.google.id 			= profile.id;
 				user.google.token 			= token;
 				user.google.name 		= profile.displayName;

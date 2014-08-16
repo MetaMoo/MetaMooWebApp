@@ -29,7 +29,8 @@ You get to this page from typing in something
 in the search bar and then hitting enter (see jQuery script in /javascripts/main.js*/ 
 router.get('/searching', function(req, res) {
 	var val = req.query.search;
-	MetamooSchema.find({ tag: val }).exec(function (err, docs) { 
+	var authEmail = req.user.local.email;
+	MetamooSchema.find({ tag: val, email: authEmail }).exec(function (err, docs) { 
 		if (err) throw err; 
 		data = docs; 
 		res.send(data);
@@ -53,10 +54,32 @@ router.get('/profile', isLoggedIn, function(req, res) {
 });
 
 
-router.post('/chromeplugin',function(req, res){
-// So Chromeplugin can push data
+router.post('/snippet', isLoggedIn, function(req, res){
+// So Chromeplugin or any other data source can push data
 // Need to figure out how to handle req. sent as a json.
 // push to db
+
+	var snippetInput = req.body;
+	snippetInput.email = req.user.local.email;
+	MetamooSchema.create(snippetInput, function(err, snippet){
+	if (err) return console.log(err);
+	return res.send(snippet);
+});
+
+
+// var snippet = new MetamooSchema();
+// snippet.content = req.body.content;
+// snippet.tag = req.body.tag;
+// snippet.note = req.body.note;
+// snippet.source = req.body.source;
+// snippet.date = req.body.date;
+
+// snippet.save(function(err){
+// 	if (err)
+// 		res.send(err);
+// 	res.json({message: 'snippet created'});
+// });
+
 });
 
 // ===================================================================

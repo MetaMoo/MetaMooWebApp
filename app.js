@@ -30,8 +30,9 @@ app.use(session({secret : 'keyboard cat', resave: true, saveUninitialized: true}
 app.use(passport.initialize()); //installed while setting up passport
 app.use(passport.session());
 
-app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 app.use(methodOverride()); //installed while setting up passport
 app.use(cookieParser());
 
