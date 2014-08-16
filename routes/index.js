@@ -53,7 +53,17 @@ router.get('/profile', isLoggedIn, function(req, res) {
   	res.render('index', {user : req.user});
 });
 
+// ---------------------------------------------
+// Show Notepad page
+// ---------------------------------------------
+router.get('/notepad', isLoggedIn, function(req, res) {
+  	res.render('notepad', {user : req.user});
+});
 
+
+// ---------------------------------------------
+// Route to post data into database
+// ---------------------------------------------
 router.post('/snippet', isLoggedIn, function(req, res){
 // So Chromeplugin or any other data source can push data
 // Need to figure out how to handle req. sent as a json.
@@ -63,7 +73,7 @@ router.post('/snippet', isLoggedIn, function(req, res){
 	snippetInput.email = req.user.local.email;
 	MetamooSchema.create(snippetInput, function(err, snippet){
 	if (err) return console.log(err);
-	return res.send(snippet);
+	return res.send("Saved");
 });
 
 
