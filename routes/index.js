@@ -225,6 +225,10 @@ router.post('/snippet', isLoggedIn, function(req, res){
     });
 
 
+router.get('/ping', isLoggedIn, function(req, res){
+	res.send( {loggedIn : true});
+});
+
 
 // Route middleware to ensure user is logged in
 function isLoggedIn(req, res, next){
