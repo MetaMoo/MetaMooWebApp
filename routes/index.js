@@ -60,6 +60,13 @@ router.get('/notepad', isLoggedIn, function(req, res) {
   	res.render('notepad', {user : req.user});
 });
 
+// ---------------------------------------------
+// Show About page
+// ---------------------------------------------
+router.get('/about', function(req, res) {
+  	res.render('about');
+  	//res.render('index', {user : req.user});
+});
 
 // ---------------------------------------------
 // Route to post data into database
