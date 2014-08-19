@@ -69,6 +69,14 @@ router.get('/about', function(req, res) {
 });
 
 // ---------------------------------------------
+// Show How it Works page
+// ---------------------------------------------
+router.get('/howitworks', function(req, res) {
+  	res.render('howitworks');
+  	//res.render('index', {user : req.user});
+});
+
+// ---------------------------------------------
 // Route to post data into database
 // ---------------------------------------------
 router.post('/snippet', isLoggedIn, function(req, res){
