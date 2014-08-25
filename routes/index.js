@@ -30,7 +30,7 @@ in the search bar and then hitting enter (see jQuery script in /javascripts/main
 router.get('/searching', function(req, res) {
 	var val = req.query.search;
 	var authEmail = req.user.local.email;
-	MetamooSchema.find({ tag: val, email: authEmail }).exec(function (err, docs) { 
+	MetamooSchema.find({ tag: {$regex : val, $options : 'i'}, email: authEmail }).exec(function (err, docs) { 
 		if (err) throw err; 
 		data = docs; 
 		res.send(data);
@@ -73,6 +73,14 @@ router.get('/about', function(req, res) {
 // ---------------------------------------------
 router.get('/howitworks', function(req, res) {
   	res.render('howitworks');
+  	//res.render('index', {user : req.user});
+});
+
+// ---------------------------------------------
+// Landing page if you are already logged in
+// ---------------------------------------------
+router.get('/homeLoggedIn', function(req, res) {
+  	res.render('homeLoggedIn',{ message: req.flash('loginMessage') });
   	//res.render('index', {user : req.user});
 });
 

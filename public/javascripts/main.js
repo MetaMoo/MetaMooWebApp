@@ -4,9 +4,9 @@
 // including the value of the search string itself.  Here "data" is the returned
 // value from the /searching route. 
 $(function(){
-  $('#search').on('keyup',function(e){
-    if(e.keyCode === 13) {
-    var parameters = { search: $(this).val() };
+  $('#searchButton').on('click',function(e){
+    if(e.type === 'click') {
+    var parameters = { search: $('#search').val() };
       $.get( '/searching',parameters, function(data) {
         //$('#results').html(data);
         $('#resultsTable tr').remove();
@@ -17,4 +17,11 @@ $(function(){
       });
     };
   });
+
+  $('#search').on('keyup',function(e){
+    if(e.keyCode === 13) {
+      $('#searchButton').click();
+    };
+  });
+
 });
