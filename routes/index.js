@@ -79,7 +79,7 @@ router.get('/howitworks', function(req, res) {
 // ---------------------------------------------
 // Landing page if you are already logged in
 // ---------------------------------------------
-router.get('/homeLoggedIn', function(req, res) {
+router.get('/homeLoggedIn', isLoggedIn, function(req, res) {
   	res.render('homeLoggedIn',{ message: req.flash('loginMessage') });
   	//res.render('index', {user : req.user});
 });
