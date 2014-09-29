@@ -84,6 +84,10 @@ router.get('/homeLoggedIn', isLoggedIn, function(req, res) {
   	//res.render('index', {user : req.user});
 });
 
+router.get('/thankyou', isLoggedIn, function(req, res) {
+  	res.render('thankyou', {user : req.user});
+});
+
 // ---------------------------------------------
 // Route to post data into database
 // ---------------------------------------------
