@@ -131,7 +131,13 @@ router.post('/snippet', isLoggedIn, function(req, res){
 	// locally -----------------------------------------------------------
 		// SHOW LOGIN FORM
 		router.get('/login', function(req,res){
-		res.render('login', { message: req.flash('loginMessage') });
+
+		ua = req.headers['user-agent'];
+		if( /chrome/i.test(ua) )
+			res.render('login', { message: req.flash('loginMessage') }); 
+		else
+			res.render('chromeinstall');
+		
 		//res.render('login', { user: req.user });
 		});
 
@@ -145,7 +151,13 @@ router.post('/snippet', isLoggedIn, function(req, res){
 
 		// SHOW SIGNUP FORM
 		router.get('/signup',function(req,res){
-		res.render('signup',{message: req.flash('signupMessage')  });
+		
+		ua = req.headers['user-agent'];
+			if( /chrome/i.test(ua) )
+  			res.render('signup',{message: req.flash('signupMessage')  }); 
+			else
+  			res.render('chromeinstall');
+			
 		});
 
 		// PROCESS SIGNUP INFO
