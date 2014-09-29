@@ -88,6 +88,11 @@ router.get('/thankyou', isLoggedIn, function(req, res) {
   	res.render('thankyou', {user : req.user});
 });
 
+router.get('/google5fb9705d1f3fcf75', function(req, res) {
+  	res.render('google5fb9705d1f3fcf75');
+  	//res.render('index', {user : req.user});
+});
+
 // ---------------------------------------------
 // Route to post data into database
 // ---------------------------------------------
