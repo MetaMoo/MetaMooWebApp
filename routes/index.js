@@ -88,8 +88,8 @@ router.get('/thankyou', isLoggedIn, function(req, res) {
   	res.render('thankyou', {user : req.user});
 });
 
-router.get('/google5fb9705d1f3fcf75', function(req, res) {
-  	res.render('google5fb9705d1f3fcf75');
+router.get('/google5fb9705d1f3fcf75.html', function(req, res) {
+  	res.render('googleverification');
   	//res.render('index', {user : req.user});
 });
 
