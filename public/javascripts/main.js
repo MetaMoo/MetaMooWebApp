@@ -13,7 +13,7 @@ $(function(){
         $('#resultsTable tr').remove();
         $('#resultsTable').append('<tr><th> Content </th> <th>Tag</th> <th>Note</th> <th>Source</th><th>Date</th></tr>');
         for (var h=0; h<data.length; h++){
-          $('#resultsTable').append('<tr><td >'+data[h].content +'</td> <td>'+data[h].tag +'</td> <td>'+data[h].note +'</td> <td>'+data[h].source +'</td> <td>'+data[h].date +'</td> </tr>');
+          $('#resultsTable').append('<tr><td >'+data[h].content +'</td> <td>'+data[h].tag +'</td> <td>'+data[h].note +'</td> <td>'+ '<a target="_blank" href="'+data[h].source+'">'+data[h].source+'</a>' +'</td> <td>'+data[h].date +'</td> </tr>');
         }
       });
     };
@@ -40,7 +40,7 @@ $(function(){
         $('#resultsTable tr').remove();
         $('#resultsTable').append('<tr><th style="width:30%"> Content </th> <th style="width:15%">Tag</th> <th>Note</th style="width:20%"> <th style="width:20%">Source</th><th style="width:15%">Date</th></tr>');
         for (var h=0; h<data.length; h++){
-          $('#resultsTable').append('<tr><td >'+data[h].content +'</td> <td>'+data[h].tag +'</td> <td>'+data[h].note +'</td> <td>'+data[h].source +'</td> <td>'+data[h].date +'</td> </tr>');
+          $('#resultsTable').append('<tr><td >'+data[h].content +'</td> <td>'+data[h].tag +'</td> <td>'+data[h].note +'</td> <td>'+ '<a target="_blank" href="'+data[h].source+'">'+data[h].source+'</a>' +'</td> <td>'+data[h].date +'</td> </tr>');
         }
       }); 
     }
