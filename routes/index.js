@@ -133,6 +133,7 @@ router.post('/snippet', isLoggedIn, function(req, res){
 		router.get('/login', function(req,res){
 
 		ua = req.headers['user-agent'];
+		
 		if( /chrome/i.test(ua) )
 			res.render('login', { message: req.flash('loginMessage') }); 
 		else
