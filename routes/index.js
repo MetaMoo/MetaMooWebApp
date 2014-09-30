@@ -84,10 +84,53 @@ router.get('/homeLoggedIn', isLoggedIn, function(req, res) {
   	//res.render('index', {user : req.user});
 });
 
+
+// ---------------------------------------------
+// Post Sign up Welcome page - Two step to download plugin + tutorials
+// ---------------------------------------------
 router.get('/thankyou', isLoggedIn, function(req, res) {
   	res.render('thankyou', {user : req.user});
 });
 
+// ---------------------------------------------
+// Help overview page
+// ---------------------------------------------
+router.get('/help', isLoggedIn, function(req, res) {
+  	res.render('helpoverview', {user : req.user});
+});
+
+// ---------------------------------------------
+// Tutorial Step 1 - Welcome page
+// ---------------------------------------------
+router.get('/tutorialstep1', isLoggedIn, function(req, res) {
+  	res.render('tutorialstep1', {user : req.user});
+});
+
+// ---------------------------------------------
+// Tutorial Step 2 - First set of random sentences
+// ---------------------------------------------
+router.get('/tutorialstep2', isLoggedIn, function(req, res) {
+  	res.render('tutorialstep2', {user : req.user});
+});
+
+// ---------------------------------------------
+// Tutorial Step 3 - Second set of random sentences
+// ---------------------------------------------
+router.get('/tutorialstep3', isLoggedIn, function(req, res) {
+  	res.render('tutorialstep3', {user : req.user});
+});
+
+// ---------------------------------------------
+// Tutorial Graduation 
+// ---------------------------------------------
+router.get('/graduated', isLoggedIn, function(req, res) {
+  	res.render('graduated', {user : req.user});
+});
+
+
+// ---------------------------------------------
+// Google verification for chrome plugin inline install
+// ---------------------------------------------
 router.get('/google5fb9705d1f3fcf75.html', function(req, res) {
   	res.render('googleverification');
   	//res.render('index', {user : req.user});
@@ -132,8 +175,8 @@ router.post('/snippet', isLoggedIn, function(req, res){
 		// SHOW LOGIN FORM
 		router.get('/login', function(req,res){
 
+		// Checking for chrome browser on desktop
 		ua = req.headers['user-agent'];
-		
 		if( /chrome/i.test(ua) )
 			res.render('login', { message: req.flash('loginMessage') }); 
 		else
@@ -163,7 +206,7 @@ router.post('/snippet', isLoggedIn, function(req, res){
 
 		// PROCESS SIGNUP INFO
 		router.post('/signup',passport.authenticate('local-signup', {
-		successRedirect : '/profile',
+		successRedirect : '/thankyou',
 		failureRedirect : '/signup',
 		failureFlash : true
 		}));
