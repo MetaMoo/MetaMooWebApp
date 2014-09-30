@@ -64,7 +64,7 @@ router.get('/notepad', isLoggedIn, function(req, res) {
 // Show About page
 // ---------------------------------------------
 router.get('/about', function(req, res) {
-  	res.render('about');
+  	res.render('about', {user : req.user});
   	//res.render('index', {user : req.user});
 });
 
@@ -93,10 +93,10 @@ router.get('/thankyou', isLoggedIn, function(req, res) {
 });
 
 // ---------------------------------------------
-// Help overview page
+// Getting started page - Installing chrome plugin etc.
 // ---------------------------------------------
-router.get('/help', isLoggedIn, function(req, res) {
-  	res.render('helpoverview', {user : req.user});
+router.get('/gettingstarted', isLoggedIn, function(req, res) {
+  	res.render('gettingstarted', {user : req.user});
 });
 
 // ---------------------------------------------
@@ -133,6 +133,14 @@ router.get('/graduated', isLoggedIn, function(req, res) {
 // ---------------------------------------------
 router.get('/google5fb9705d1f3fcf75.html', function(req, res) {
   	res.render('googleverification');
+  	//res.render('index', {user : req.user});
+});
+
+// ---------------------------------------------
+// Help page
+// ---------------------------------------------
+router.get('/help', function(req, res) {
+  	res.render('help', {user : req.user});
   	//res.render('index', {user : req.user});
 });
 

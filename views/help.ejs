@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% include ./partials/head %>
+
+<body>
+
+<!-- Header row -->
+<div class="container row">
+	<div class="col-md-6 text-left">
+		 <a href="/profile" class="navbar-brand"><img src="/images/logo_cow_only_small.png" class="img-responsive" style="float:none; margin:0 auto"></a> <h1 style="font-family: Serif"> <strong>MetaMoo-niversity </strong></h1>
+	</div>
+	<div class="col-md-6 text-right">
+		<br>
+		<% if (!user) {%>
+              <a class="text-info text-right" href="/login" style="font-size: 1.3em"> Login</a> or <a class="text-info text-right" href="/signup" style="font-size: 1.3em"> Signup</a>
+            <% } else {%>
+				<a class="text-info text-right" href="/profile" style="font-size: 1.3em"> MetaMoo Search</a> or <a class="text-info text-right" href="#" style="font-size: 1.3em"> Help</a>
+			<% } %>
+	</div>
+</div>
+
+<hr>
+<div class="container row">
+
+	<!-- Videos -->
+	<div class="container col-md-6" style="padding-left: 5%">
+		<h2 style="font-family: Serif"><u> Examples of using MetaMoo for:</u> </h2>
+		&nbsp;
+			<h3><strong>Vacation Planning</strong></h3>
+			<div >
+				<iframe width="420" height="315" src="//www.youtube.com/embed/LCQOTxC1LOk?list=UUw69MaIkbFC6eXcbWUG6x4Q" frameborder="0" allowfullscreen></iframe>
+			</div>
+		&nbsp;
+			<h3><strong>Shopping</strong></h3>
+			<div >
+				<iframe width="420" height="315" src="//www.youtube.com/embed/IvSAfR8pp18?list=UUw69MaIkbFC6eXcbWUG6x4Q" frameborder="0" allowfullscreen></iframe>
+			</div>
+		&nbsp;
+			<h3><strong>Students and Teachers</strong></h3>
+			<div >
+				<iframe width="420" height="315" src="//www.youtube.com/embed/AAYDj9DOXMQ?list=UUw69MaIkbFC6eXcbWUG6x4Q" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+	</div>
+
+	<!-- Right hand bar with contact and faq -->
+	<div class="container col-md-6" style="padding-left: 5%">
+
+		<!-- Contact info -->
+		<div class="row">
+		<h2 style="font-family: Serif"> <u>Contact us with any questions and feedback </u></h2>
+		&nbsp;
+		<h4><strong> Email </strong></h4>
+		<p> vasanth@metamoo.com </p>
+		<p> pete@metamoo.com </p>
+
+		</div>
+		<hr>
+		<!-- FAQ -->
+		<div class="row">
+		<h2 style="font-family: Serif"><u> Frequently Asked Questions: </u></h2>
+		&nbsp;
+		<h4><strong>How do I sign-in to MetaMoo?</strong></h4>
+			<div >
+				<iframe width="420" height="315" src="//www.youtube.com/embed/-9CTgGaNBiw" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+		&nbsp;
+		<h4><strong>How do I highlight, tag and take notes?</strong></h4>
+			<div >
+				<iframe width="420" height="315" src="//www.youtube.com/embed/T4ZTpwEVuyQ" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+		&nbsp;
+		<h4><strong>How do I search my notes?</strong></h4>
+			<div >
+				<iframe width="420" height="315" src="//www.youtube.com/embed/UPQVhGmNiB4" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+		&nbsp;
+		<h4><strong>How do I see all my notes?</strong></h4>
+			<div >
+				<iframe width="420" height="315" src="//www.youtube.com/embed/3X4DzF8jPPo?list=UUw69MaIkbFC6eXcbWUG6x4Q" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+		<h4><strong>How do I share my insights?</strong></h4>
+			<div >
+				<iframe width="420" height="315" src="//www.youtube.com/embed/qr_vJXsUVps?list=UUw69MaIkbFC6eXcbWUG6x4Q" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+
+		<p><strong>What does MooPad do?</strong>
+			<div >
+				<iframe width="420" height="315" src="//www.youtube.com/embed/EWyywEOYfQo?list=UUw69MaIkbFC6eXcbWUG6x4Q" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+
+
+
+
+
+
+		</div>
+
+	</div>
+
+</div>
+
+
+</body>
+<hr> 
+<footer class="text-center">
+	<a class="text-muted" href="/profile" style="font-size: 1.2em"> Home</a> &nbsp | &nbsp
+	<a class="text-muted" href="/about" style="font-size: 1.2em"> About us</a> &nbsp 
+
+</footer>
+<br>
+</html>

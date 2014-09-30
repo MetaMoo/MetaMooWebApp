@@ -8,19 +8,23 @@
 <!-- Header row -->
 <div class="container row">
 	<div class="col-md-6 text-left">
-		 <a href="/profile" class="navbar-brand"><img src="/images/logo_cow_only_small.png" class="img-responsive" style="float:none; margin:0 auto"></a>
+		 <a href="/profile" class="navbar-brand"><img src="/images/logo_cow_only_small.png" class="img-responsive" style="float:none; margin:0 auto"></a> <h1 style="font-family: Serif"> <strong>About MetaMoo </strong><h1>
 	</div>
 	<div class="col-md-6 text-right">
 		<br>
-		<a class="text-info text-right" href="/login" style="font-size: 1.3em"> Login</a> or <a class="text-info text-right" href="/signup" style="font-size: 1.3em"> Signup</a>
+		<% if (!user) {%>
+              <a class="text-info text-right" href="/login" style="font-size: 1.3em"> Login</a> or <a class="text-info text-right" href="/signup" style="font-size: 1.3em"> Signup</a>
+            <% } else {%>
+				<a class="text-info text-right" href="/profile" style="font-size: 1.3em"> MetaMoo Search</a> or <a class="text-info text-right" href="#" style="font-size: 1.3em"> Help</a>
+			<% } %>
 	</div>
 </div>
-<hr>
 
+<hr>
 
 <div class="container row" style="background-color: light-grey">
 	<div class="col-md-6" style="padding-left: 5%">
-	<h1 style="font-family: Serif"> <strong> About MetaMoo </strong> </h1>
+	<!--<h1 style="font-family: Serif"> <strong> About MetaMoo </strong> </h1>-->
 	<p style="line-height: 175%"> MetaMoo is a tool that simplifies the way you read and record information.</p> 
 
 	<p style="line-height: 175%"> MetaMoo was founded in 2014 by <strong>Vasanth Sarathy </strong> (cartoonist, lawyer and computer scientist) and <strong>Pete Spiegel </strong>(musician, educator and marketing-guru). They were tired of constantly having to search for things in their notes and articles they had bookmarked as being "useful". Keyword searches didn't work because although they remembered roughly the context of something, they could not recall the exact words.</p>
@@ -37,7 +41,7 @@
 <hr>
 
 <div class="container-row" style="padding-left: 5%; padding-right: 20%" >
-	<h1 style="font-family: Serif"> <strong>Why the name, MetaMoo? </strong></h1>
+	<h1 style="font-family: Serif"> <strong>Why the name? </strong></h1>
 
 	<p style="line-height: 175%"> <strong> "Meta" </strong> because we believe the key to organizing your thinking in the face of overwhelming information is tracking your introspective thought process, ("Metacognition"). That is the "whys", "hows", "whats" we ask ourselves as we read and write things. Capturing these metacognitive thoughts with hashtags like #what, #conclusion etc., is a very powerful way of remember why you highlighted something or wrote something down. It also makes organizing stuff a piece of cake!</p>
 
@@ -49,8 +53,7 @@
 <hr> 
 <footer class="text-center">
 	<a class="text-muted" href="/profile" style="font-size: 1.2em"> Home</a> &nbsp | &nbsp
-	<a class="text-muted" href="/about" style="font-size: 1.2em"> About us</a> &nbsp | &nbsp
-	<a class="text-muted" href="/howitworks" style="font-size: 1.2em"> How it works</a>
+	<a class="text-muted" href="/about" style="font-size: 1.2em"> About us</a> &nbsp 
 
 </footer>
 <br>
