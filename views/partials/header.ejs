@@ -29,13 +29,15 @@
                   <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= user.local.email %> <b class="caret"></b></a>
                   <ul role="menu" class="dropdown-menu">
                       
-                    <% if (user.twitter.token) {%>
+<!--                     <% if (user.twitter.token) {%>
         
                     <li><a href="/unlink/twitter" class="btn btn-default">Unlink Twitter (@<%= user.twitter.username %>)</a><li>
                     <%} else { %>
                     <li><a href="/connect/twitter" class="btn btn-default">Connect Twitter</a></li>
-                    <% } %>
-                    <li><a href="/tutorialstep1">Get started</a></li>
+                    <% } %> -->
+
+
+                    <li><a href="/tutorialstep1">MetaMoo 101</a></li>
                     
                     <li class="divider"></li>
                     <li><a href="/logout">Logout</a></li>
