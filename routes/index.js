@@ -145,6 +145,21 @@ router.get('/help', function(req, res) {
 });
 
 // ---------------------------------------------
+// Show Tags in side panel
+// ---------------------------------------------
+/* GET all tags page. 
+You can see all tags by selecting button to reveal
+side panel (see jQuery script in /javascripts/main.js*/ 
+router.get('/alltags', function(req, res) {
+	var authEmail = req.user.local.email;
+	MetamooSchema.find({ email: authEmail }).exec(function (err, docs) { 
+		if (err) throw err; 
+		data = docs; 
+		res.send(data);
+	});	
+});
+
+// ---------------------------------------------
 // Route to post data into database
 // ---------------------------------------------
 router.post('/snippet', isLoggedIn, function(req, res){

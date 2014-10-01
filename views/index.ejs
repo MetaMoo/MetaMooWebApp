@@ -9,11 +9,12 @@
 
   <div id="site-wrapper">
     <main>
+
       <div class="container">
         <div class="row">
-        <!-- Metamoo logo -->
-        <img src="/images/MetaMoo_logo_beta.png" class="img-responsive text-center" style="float:none; margin:0 auto">
-        &nbsp
+          <!-- Metamoo logo -->
+          <img data-intro='Mooo! Welcome to MetaMoo.' src="/images/MetaMoo_logo_beta.png" class="img-responsive text-center" style="float:none; margin:0 auto">
+          &nbsp
         </div>
 
        
@@ -23,20 +24,23 @@
             <div class="col-sm-8 col-sm-offset-2">
 
               <!-- <form role="form"> -->
-                <div class="input-group">
-                  <input id="search" type="text" class="form-control input-sm">
+                <div data-intro='Type your tag here to find all your information snippets' class="input-group">
+                  <input  id="search" type="text" class="form-control input-sm">
                    <span class="input-group-btn">
                     <button id="searchButton" class="btn btn-default btn-sm" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                   </span>
                   <!-- <a href="/profile">Clear</a -->
                </div> 
                <br>
-               <a href="/profile" class="btn btn-default btn-sm"><span class="fa fa-circle-o"></span> Clear screen</a>
+               <a data-intro='Clear (but not delete) all your results' href="/profile" class="btn btn-default btn-sm"><span class="fa fa-circle-o"></span> Clear screen</a>
               
-              <a id="showAll" href="#" class="btn btn-default btn-sm"><span class="fa fa-circle"></span> Show all</a>
-              <a id="twitterShare" target="_blank" href="#" class="btn btn-default btn-sm"><span class="fa fa-twitter"></span> Tweet Insight</a>
+              <a data-intro='See all your notes' id="showAll" href="#" class="btn btn-default btn-sm"><span class="fa fa-circle"></span> Show all</a>
 
-              <a href="#" class="btn btn-default btn-sm"><span class="fa fa-trash-o"></span> Delete these</a>
+              <a data-intro='Share your thoughts on Twitter' id="twitterShare" target="_blank" href="#" class="btn btn-default btn-sm"><span class="fa fa-twitter"></span> Tweet Insight</a>
+
+              <!-- <a data-intro='Delete notes that you see on your screen' href="#" class="btn btn-default btn-sm"><span class="fa fa-trash-o"></span> Delete these</a> -->
+
+              <button onclick="introJs().start();" type="button" class="btn btn-success"><span class="fa"></span>Help</button>
 
               <!-- </form> --> 
 
@@ -49,23 +53,32 @@
         &nbsp;
       </div>
 
-      <div class="container">
-        <p id= "results"></p>
+      <div class="row container-fluid">
+
+        <!-- Slide panel -->
+        <div id="slide-panel">
+          <a data-intro='See all your tags here' href="#" class="btn btn-primary" id="opener"><i class="glyphicon glyphicon-tags"></i></a>
+          <h4> <strong>Your Tags:</strong> </h4>
+          <div id= "alltags">
+          </div>
+        </div>
+        
+        <!-- Results table -->
+        <div class="container" id="content">
+          <!-- Table -->
+          <table style="width:100%" id="resultsTable" class="table table-striped">
+          </table>
+
+        </div>
       </div>
-
-      <div class="container">
-        <!-- Table -->
-        <table style="width:100%" id="resultsTable" class="table table-striped">
-        </table>
-
-      </div>
-
 
     </main>
+
 </div> <!-- Site wrapper -->
     
-    <% include ./partials/footer %>
+
     <% include ./partials/jsdefaults %>
+    <% include ./partials/footer %>
 
   </body>
 </html>
