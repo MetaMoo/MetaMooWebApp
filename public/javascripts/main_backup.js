@@ -4,17 +4,17 @@
 // including the value of the search string itself.  Here "data" is the returned
 // value from the /searching route. 
 $(function(){
-
   $('#searchButton').on('click',function(e){
     if(e.type === 'click') {
     var parameters = { search: $('#search').val() };
       $.get( '/searching',parameters, function(data) {
         //$('#results').html(data);
+        
         $('#resultsTable tr').remove();
-        $('#resultsTable').append('<tr><th> Highlighted Content </th> <th>Tag</th> <th>Note</th> <th>Source</th><th>Date</th></tr>');
+        $('#resultsTable').append('<tr><th> Content </th> <th>Tag</th> <th>Note</th> <th>Source</th><th>Date</th></tr>');
         for (var h=0; h<data.length; h++){
-          $('#resultsTable').append('<tr class="edit_tr" id="'+data[h]._id+'"><td >'+data[h].content +'</td> <td class="edit_td"><span class="texty" id="tag_'+data[h]._id+'">'+data[h].tag +'</span><input type="text" class="editbox" id="tag_input_'+data[h]._id+'" value="'+data[h].tag+'"</td> <td class="edit_td"><span class="texty" id="note_'+data[h]._id+'">'+data[h].note +'</span><input type="text" class="editbox" id="note_input_'+data[h]._id+'" value="'+data[h].note+'"</td><td>'+ '<a target="_blank" href="'+data[h].source+'">'+data[h].source+'</a>' +'</td> <td>'+data[h].date +'</td> </tr>');
-        };
+          $('#resultsTable').append('<tr><td >'+data[h].content +'</td> <td>'+data[h].tag +'</td> <td>'+data[h].note +'</td> <td>'+ '<a target="_blank" href="'+data[h].source+'">'+data[h].source+'</a>' +'</td> <td>'+data[h].date +'</td> </tr>');
+        }
       });
     };
   });
@@ -46,7 +46,4 @@ $(function(){
     }
   });
 
-
 });
-
-

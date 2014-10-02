@@ -173,21 +173,20 @@ router.post('/snippet', isLoggedIn, function(req, res){
 	if (err) return console.log(err);
 	return res.send("Saved");
 });
+});
+// ---------------------------------------------
+// Route to update data in database
+// ---------------------------------------------
+router.post('/update', isLoggedIn, function(req, res){
 
-
-// var snippet = new MetamooSchema();
-// snippet.content = req.body.content;
-// snippet.tag = req.body.tag;
-// snippet.note = req.body.note;
-// snippet.source = req.body.source;
-// snippet.date = req.body.date;
-
-// snippet.save(function(err){
-// 	if (err)
-// 		res.send(err);
-// 	res.json({message: 'snippet created'});
-// });
-
+	var updateInput = req.body;
+	//updateInput.email = req.user.local.email;
+	console.log(updateInput._id);
+	MetamooSchema.update({ _id: updateInput._id },{$set: {tag: updateInput.tag,note: updateInput.note}},function(err, result){
+	if (err) return console.log(err);
+	return console.log("Saved");
+});
+	
 });
 
 // ===================================================================
@@ -352,7 +351,7 @@ function isLoggedIn(req, res, next){
 		return next();
 	//if they aren't redirect them to home page
 	res.redirect('/');
-}
+};
 
 
 module.exports = router;
