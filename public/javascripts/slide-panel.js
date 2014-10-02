@@ -18,6 +18,7 @@ $(document).ready(function(){
 		$.each(tagsArray, function(i, el){
     		if($.inArray(el, uniqueTags) === -1) uniqueTags.push(el);
 		});
+		uniqueTags.sort();
 		$('#alltags').empty();
 	    for (var hh=0; hh<uniqueTags.length; hh++){
 	    $('#alltags').append("<p>"+uniqueTags[hh]+"</p>");
