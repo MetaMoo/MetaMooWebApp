@@ -185,8 +185,25 @@ router.post('/update', isLoggedIn, function(req, res){
 	MetamooSchema.update({ _id: updateInput._id },{$set: {tag: updateInput.tag,note: updateInput.note}},function(err, result){
 	if (err) return console.log(err);
 	return console.log("Saved");
-});
+	});
 	
+});
+
+
+// ---------------------------------------------
+// Route to delete data in database
+// ---------------------------------------------
+router.post('/delete', isLoggedIn, function(req, res){
+
+	var deleteInput = req.body;
+	//updateInput.email = req.user.local.email;
+	console.log(deleteInput._id);
+	MetamooSchema.remove( { _id: deleteInput._id }, function(err, result){
+	if (err) return console.log(err);
+	return console.log("Deleted");
+	});
+
+
 });
 
 // ===================================================================

@@ -6,6 +6,8 @@ $(document).on('click', '.edit_tr' , function() {
     $("#note_"+RowID).hide();
     $("#tag_input_"+RowID).show();
     $("#note_input_"+RowID).show();
+    //need to show delete button
+    $("#delete_"+RowID).show();
 });
 
 
@@ -41,8 +43,25 @@ $(document).on('change', '.edit_tr' , function() {
 
   $(document).mouseup(function()
   {
+    $(".delete_button").hide();
     $(".editbox").hide();
     $(".texty").show();
+  });
+
+
+  $(document).on('click', '.delete_button' , function() {
+    var RowID = $(this).closest('tr').attr('id');
+    var infoSend = {};
+	var r = confirm("Are you sure you want to delete this snippet? There's no undo.");
+		if (r == true) {
+      		infoSend['_id'] = RowID;
+      		$.post('/delete', infoSend, function(data){
+        }, "json");
+		} else {
+    		return false
+    	};
+    $( "#searchButton" ).trigger( "click" );
+
   });
 
 

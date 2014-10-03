@@ -11,9 +11,9 @@ $(function(){
       $.get( '/searching',parameters, function(data) {
         //$('#results').html(data);
         $('#resultsTable tr').remove();
-        $('#resultsTable').append('<tr><th> Highlighted Content </th> <th>Tag</th> <th>Note</th> <th>Source</th><th>Date</th></tr>');
+        $('#resultsTable').append('<tr><th></th><th> Highlighted Content </th> <th>Tag</th> <th>Note</th> <th>Source</th><th>Date</th></tr>');
         for (var h=0; h<data.length; h++){
-          $('#resultsTable').append('<tr class="edit_tr" id="'+data[h]._id+'"><td >'+data[h].content +'</td> <td class="edit_td"><span class="texty" id="tag_'+data[h]._id+'">'+data[h].tag +'</span><input type="text" class="editbox" id="tag_input_'+data[h]._id+'" value="'+data[h].tag+'"</td> <td class="edit_td"><span class="texty" id="note_'+data[h]._id+'">'+data[h].note +'</span><input type="text" class="editbox" id="note_input_'+data[h]._id+'" value="'+data[h].note+'"</td><td>'+ '<a target="_blank" href="'+data[h].source+'">'+data[h].source+'</a>' +'</td> <td>'+data[h].date +'</td> </tr>');
+          $('#resultsTable').append('<tr class="edit_tr" id="'+data[h]._id+'"><td><button type="button" class="btn btn-xs btn-danger delete_button" id="delete_'+data[h]._id+'"> <span class="glyphicon glyphicon-remove"></span></button> &nbsp</td> <td > '+data[h].content +'</td> <td class="edit_td"><span class="texty" id="tag_'+data[h]._id+'">'+data[h].tag +'</span><input type="text" class="editbox" id="tag_input_'+data[h]._id+'" value="'+data[h].tag+'"</td> <td class="edit_td"><span class="texty" id="note_'+data[h]._id+'">'+data[h].note +'</span><input type="text" class="editbox" id="note_input_'+data[h]._id+'" value="'+data[h].note+'"</td><td>'+ '<a target="_blank" href="'+data[h].source+'">'+data[h].source+'</a>' +'</td> <td>'+data[h].date +'</td> </tr>');
         };
       });
     };
@@ -38,9 +38,9 @@ $(function(){
       $.get( '/searching',parameters, function(data) {
         //$('#results').html(data);
         $('#resultsTable tr').remove();
-       $('#resultsTable').append('<tr><th> Highlighted Content </th> <th>Tag</th> <th>Note</th> <th>Source</th><th>Date</th></tr>');
+       $('#resultsTable').append('<tr><th></th><th> Highlighted Content </th> <th>Tag</th> <th>Note</th> <th>Source</th><th>Date</th></tr>');
         for (var h=0; h<data.length; h++){
-          $('#resultsTable').append('<tr class="edit_tr" id="'+data[h]._id+'"><td >'+data[h].content +'</td> <td class="edit_td"><span class="texty" id="tag_'+data[h]._id+'">'+data[h].tag +'</span><input type="text" class="editbox" id="tag_input_'+data[h]._id+'" value="'+data[h].tag+'"</td> <td class="edit_td"><span class="texty" id="note_'+data[h]._id+'">'+data[h].note +'</span><input type="text" class="editbox" id="note_input_'+data[h]._id+'" value="'+data[h].note+'"</td><td>'+ '<a target="_blank" href="'+data[h].source+'">'+data[h].source+'</a>' +'</td> <td>'+data[h].date +'</td> </tr>');
+          $('#resultsTable').append('<tr class="edit_tr" id="'+data[h]._id+'"><td><button type="button" class="btn btn-xs btn-danger delete_button" id="delete_'+data[h]._id+'"> <span class="glyphicon glyphicon-remove"></span></button> &nbsp</td> <td > '+data[h].content +'</td> <td class="edit_td"><span class="texty" id="tag_'+data[h]._id+'">'+data[h].tag +'</span><input type="text" class="editbox" id="tag_input_'+data[h]._id+'" value="'+data[h].tag+'"</td> <td class="edit_td"><span class="texty" id="note_'+data[h]._id+'">'+data[h].note +'</span><input type="text" class="editbox" id="note_input_'+data[h]._id+'" value="'+data[h].note+'"</td><td>'+ '<a target="_blank" href="'+data[h].source+'">'+data[h].source+'</a>' +'</td> <td>'+data[h].date +'</td> </tr>');
         }
       }); 
     }

@@ -20,3 +20,7 @@ td
 	background:right no-repeat #E2F2F9;
 	cursor:pointer;
 	}
+.delete_button
+{
+	display:none;
+}
