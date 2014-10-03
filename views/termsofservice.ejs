@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% include ./partials/head %>
+
+<body>
+
+<!-- Header row -->
+<div class="container row">
+	<div class="col-md-6 text-left">
+		 <a href="/profile" class="navbar-brand"><img src="/images/logo_cow_only_small.png" class="img-responsive" style="float:none; margin:0 auto"></a> <h1 style="font-family: Serif"> <strong>Terms of Service </strong><h1>
+	</div>
+	<div class="col-md-6 text-right">
+		<br>
+		<% if (!user) {%>
+              <a class="text-info text-right" href="/login" style="font-size: 1.3em"> Login</a> or <a class="text-info text-right" href="/signup" style="font-size: 1.3em"> Signup</a>
+            <% } else {%>
+				<a class="text-info text-right" href="/profile" style="font-size: 1.3em"> MetaMoo Search</a> or <a class="text-info text-right" href="#" style="font-size: 1.3em"> Help</a>
+			<% } %>
+	</div>
+</div>
+
+<hr>
+
+<div class="row" style="background-color: light-grey">
+	<div class=".col-md-6 .col-md-offset-3" style="padding-left: 18%; padding-right: 18%;">
+	<!--<h1 style="font-family: Serif"> <strong> About MetaMoo </strong> </h1>-->
+		
+		<h2> Introduction </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em"> Mooo! and welcome to MetaMoo, LLC, a Massachusetts company (“MetaMoo,” “we,” or “us”). Your use of this website (the “Site”), the services made available on the Site, and access to services via our browser plugings and API (together “Services”) are all subject to these Terms of Service (these “Terms”). By using any of our Services, you agree to be bound by, and use our Services in compliance with, these Terms. <strong>If you do not agree to these terms, do not use our services.</strong></p>
+
+		<h2> General </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">This Agreement and any action related thereto will be governed and interpreted by and under the laws of the Commonwealth of Massachusetts, without giving effect to any conflicts of laws principles that require the application of the law of a different state. The United Nations Convention on Contracts for the International Sale of Goods shall not apply to this Agreement. You hereby expressly consent to the personal jurisdiction and venue in the state and federal courts for the county in which MetaMoo’s principal place of business is located for any lawsuit filed there against you by MetaMoo arising from or related to this Agreement.</p>
+
+		<p style="line-height: 220% ;font-size:1.1em">We and our suppliers make no representation that the Services are appropriate or available for use in locations other than the United States. If you use the Services from outside the United States, you are solely responsible for compliance with all applicable laws, including without limitation export and import regulations of other countries.</p>
+
+		<p style="line-height: 220% ;font-size:1.1em">You may not assign, subcontract, delegate, or otherwise transfer these Terms, or your rights and obligations herein, without obtaining our prior written consent. We may freely assign these Terms.</p>
+
+		<p style="line-height: 220% ;font-size:1.1em">Any waiver or failure to enforce any provision of this Agreement on one occasion will not be deemed a waiver of any other provision or of such provision on any other occasion.</p>
+
+		<p style="line-height: 220% ;font-size:1.1em">If any provision of this Agreement is, for any reason, held to be invalid or unenforceable, the other provisions of this Agreement will remain enforceable and the invalid or unenforceable provision will be deemed modified so that it is valid and enforceable to the maximum extent permitted by law.</p>
+
+		<p style="line-height: 220% ;font-size:1.1em">These Terms are the final, complete and exclusive agreement of the parties with respect to the subject matters hereof and supersede and merge all prior discussions between the parties with respect to such subject matters. No modification of or amendment to these Terms, or any waiver of any rights under these Terms, will be effective unless in writing and signed by an authorized signatory of you and an officer of MetaMoo.</p>
+
+
+		<h2> Disclaimer of Warranties </h2>
+
+		<p style="line-height: 175% ;font-size:1.1em"> METAMOO IS PROVIDING THE SERVICES ON AN “AS IS” BASIS FOR USE AT YOUR OWN RISK. METAMOO DOES NOT WARRANT THAT THE OPERATION OF THE SERVICES WILL BE UNINTERRUPTED OR ERROR-FREE. METAMOO DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF TITLE, NON-INFRINGEMENT OF THIRD PARTY RIGHTS, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+		<h2> Limitation of Liability </h2>
+
+		<p style="line-height: 175% ;font-size:1.1em">YOU AGREE THAT METAMOO SHALL NOT BE RESPONSIBLE FOR ANY LOSS OR DAMAGE TO YOU, YOUR CUSTOMERS, OR THIRD PARTIES CAUSED BY THE USE OF OR INABILITY TO USE THE SERVICES OR FAILURE OF THE SERVICES TO FUNCTION. IN NO EVENT WILL METAMOO BE LIABLE FOR ANY SPECIAL, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, OR INDIRECT DAMAGES, INCLUDING LOST DATA AND LOST PROFITS, IN CONNECTION WITH THE USE OF THE SERVICES OR OTHER MATERIALS PROVIDED ALONG WITH THE SERVICES OR IN CONNECTION WITH ANY OTHER CLAIM ARISING FROM THIS AGREEMENT, EVEN IF METAMOO HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. TO THE MAXIMUM EXTENT PERMITTED BY LAW, METAMOO’S AGGREGATE CUMULATIVE LIABILITY HEREUNDER SHALL NOT EXCEED FIFTY DOLLARS ($50.00).</p>
+
+		<h2> Indemnity </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">You will indemnify and hold us, our suppliers and licensors, and our respective subsidiaries, affiliates, officers, agents, employees, representatives, and assigns harmless from any costs, damages, expenses, and liability caused by your use of the Services, your violation of these Terms, your violation of any applicable law, regulation or rule, including, but not limited to, the Health Insurance Portability and Accountability Act of 1996, the Children's Online Privacy Protection Act of 1998, or the Gramm-Leach-Bliley Act of 1999, or your violation of any rights of a third party through use of the Services.</p>	
+
+		<h2> Conditions of Use </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">You will not (i) decompile, disassemble, reverse engineer or otherwise attempt to obtain or perceive the source code from which any software component of the Services are compiled or interpreted, and you acknowledge that nothing in this Agreement will be construed to grant you any right to obtain or use such code; (ii) create any derivative product from any of the foregoing; (iii) without our express written permission, introduce software or automated agents or scripts to the Services so as to produce multiple accounts, generate automated searches, requests and queries, or to strip or mine data from the Services; (iv) perform or publish any performance or benchmark tests or analyses relating to the Services or the use thereof; or (v) allow third parties to gain access to the Services or to otherwise use the Services in any manner other than as expressly permitted in this Agreement. You are responsible for notifying any end user of your products or services that access the Services that your products or services will transmit personal data to us through the Services and obtaining such end user’s consent to the collection of such personal data by us.</p>	
+
+
+		<h2> Kids </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">MetaMoo is not currently directed to children, and we expect that use by children will only be done with the guidance, supervision and consent of their parents, guardians and/or authorized school officials. Further, we rely on parents and guardians to ensure minors only use the Service if they can understand their rights and responsibilities as stated in these Terms and our Privacy Policy.</p>
+
+		<p style="line-height: 220% ;font-size:1.1em">If you are a school, district or teacher in the United States and want your students who are under the age of 13 to create MetaMoo accounts, including in conjunction with the establishment of an MetaMoo Education account for the schools or a group of students at the school, you agree that you are responsible for complying with the U.S. Children's Online Privacy Protection Act (“COPPA”) and, to the extent applicable, The Family Educational Rights and Privacy Act (“FERPA”). This means you must notify those students’ parents/guardians of the personally identifiable information MetaMoo will collect and obtain parental/guardian consent before your students establish accounts or use the Service. When obtaining such consent, you must provide parents/guardians with a copy of our Privacy Policy. You must keep all consents on file and provide them to us if we request them. For more information on complying with COPPA, see the Federal Trade Commission’s website at <a href="http://www.ftc.gov/privacy/coppafaqs.shtm">http://www.ftc.gov/privacy/coppafaqs.shtm</a>. If you are located outside of the United States, we will rely upon you to obtain any required consent or approval from the parent or guardian of any student covered by similar laws and, as a condition to your and your students’ use of the Service, you agree that you will be responsible for complying with such laws.</p>	
+
+
+		<h2> Your Content </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">You are solely responsible for any content and other material that you submit, publish, transmit, or display on, through, or with our Services (“Content”). You grant us a non-exclusive, worldwide, royalty-free and fully paid license to use the Content, as necessary, for purposes of providing the Services to you and other users of the Services. All rights in and to the Content not expressly granted to us in this Agreement are reserved by you.</p>	
+
+		<p style="line-height: 220% ;font-size:1.1em">You will not use our services to:</p>	
+
+		<ol style="line-height: 220% ;font-size:1.1em">
+			<li>upload, post, email, or otherwise transmit any Content that contains unlawful, harmful, threatening, abusive, harassing, tortious, defamatory, vulgar, obscene, libelous, invasive of another's privacy, hateful, or racially, ethnically or otherwise objectionable;</li>
+			<li>harm us or third parties in any way;</li>
+			<li>impersonate any person or entity, or otherwise misrepresent your affiliation with any person or entity;</li>
+			<li>upload, post, email, or otherwise transmit any Content that you do not have a right to transmit under any law or under contractual or fiduciary relationships (such as inside information, proprietary and confidential information learned or disclosed as part of employment relationships or under nondisclosure agreements);</li>
+			<li>upload, post, email or otherwise transmit any Content that contains confidential health information governed under the Health Insurance Portability and Accountability Act of 1996 (HIPAA);</li>
+			<li>upload, post, email or otherwise transmit any Content that contains identifiable financial information (such as Social Security numbers, credit card numbers, bank account numbers, or bank routing information);</li>
+			<li>upload, post, email or otherwise transmit any Content that contains password information for any third-party users;</li>
+			<li>upload, post, email or otherwise transmit any Content that contains personally identifiable information for individuals under the age of 13 years old;</li>
+			<li>upload, post, email or otherwise transmit any Content that infringes any patent, trademark, trade secret, copyright, or other right of any party;</li>
+			<li>upload, post, email, or otherwise transmit any unsolicited or unauthorized advertising, promotional materials, “junk mail,” “spam,” “chain letters,” “pyramid schemes,” or any other forms of solicitation;</li>
+			<li>upload, post, email, or otherwise transmit any Content that contains software viruses or any other computer code, files, or programs designed to interrupt, destroy, or limit the functionality of any computer software or hardware or telecommunications equipment;</li>
+			<li>interfere with or disrupt the Services or servers or networks connected to the Services, or disobey any requirements, procedures, policies or regulations of networks connected to the Services;</li>
+			<li>intentionally or unintentionally violate any applicable local, state, national or international law or regulation;</li>
+			<li>“stalk” or otherwise harass another user of the Services.</li>
+		</ol>
+
+		<p style="line-height: 220% ;font-size:1.1em">You agree that we may (but have no obligation to), in our sole discretion, remove or modify any Content which we deem to violate this section.</p>
+
+		<h2> Terms and Termination </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">These Terms will continue to apply until terminated by either you or MetaMoo as set forth below (the “Term”).</p>	
+
+		<p style="line-height: 220% ;font-size:1.1em">If you want to terminate your agreement with us, you may do so by (a) notifying us at any time; and (b) closing your accounts for the Services, where we have made this option available to you. Your notice should be sent, in writing, to Company’s address set forth below.</p>
+
+		<p style="line-height: 220% ;font-size:1.1em">We may at any time terminate our agreement with you if (a) you have breached any provision of these Terms (or have acted in a manner that clearly shows you do not intend to, or are unable to, comply with these Terms); (b) we are required to do so by law (for example, where the provision of the Services to you is, or becomes, unlawful); (c) the provision of the Services to you by us is, in our opinion, no longer commercially viable; or (d) we have elected to discontinue the Services (or any part thereof).</p>
+
+		<p style="line-height: 220% ;font-size:1.1em">Termination of your account includes: (a) removal of access to all offerings within the Services; (b) deletion of your password and all related information; and (c) barring of further use of the Services. Upon expiration or termination, you shall promptly discontinue use of the Services. However, the sections titled IP Ownership, Your Content, Feedback, Disclaimer of Warranties, Limitation of Liability, Indemnity, Term and Termination and General of these Terms will survive any termination of the Terms.</p>
+
+
+
+		<h2> IP Ownership </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">Subject to the rights granted in this Agreement, MetaMoo retains all right, title and interest in and to the Services, and you acknowledge that you neither own nor acquire any rights in and to the Services other than the limited rights expressly granted under this Agreement.</p>	
+
+
+		<h2> Usernames and Passwords </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">You are responsible for maintaining the confidentiality of your username and password, and are solely responsible for all activities that occur thereunder. You agree (i) not to allow a third party to use your account, usernames or passwords at any time; and (ii) to notify MetaMoo promptly of any actual or suspected unauthorized use of your account, usernames or passwords, or any other breach or suspected breach of this Agreement.</p>	
+
+		<h2> Copyright Policy </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">We reserve the right to terminate our agreement with any customer who repeatedly infringes third party copyright rights upon prompt notification to us by the copyright owner or the copyright owner’s legal agent. Without limiting the foregoing, if you believe that a copyrighted work has been copied and posted via the Services in a way that constitutes copyright infringement, you shall provide us with the following information: (a) an electronic or physical signature of the person authorized to act on behalf of the owner of the copyrighted work; (b) an identification and location in connection with the Service of the copyrighted work that you claim has been infringed; (c) a written statement by you that you have a good faith belief that the disputed use is not authorized by the owner, its agent, or the law; (d) your name and contact information, such as telephone number or email address; and (e) a statement by you that the above information in your notice is accurate and, under penalty of perjury, that you are the copyright owner or authorized to act on the copyright owner’s behalf. Contact information for our Copyright Agent for notice of claims of copyright infringement is as follows:</p>	
+
+		<p style="font-size:1.1em"><strong>MetaMoo, LLC</strong></p> <br/>
+		<strong>Attn: Copyright Agent</strong><br/>
+		45 Prospect St<br/>
+		Cambridge, MA 02139<br/>
+		legal@metamoo.com</p>
+
+		<h2> Changes to these Terms </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">If we make any substantial changes to these Terms, we will notify you by sending you an e-mail to the last e-mail address you provided to us and/or by prominently posting notice of the changes on our website. Any material changes to these Terms will be effective upon the earlier of thirty (30) calendar days following our dispatch of an e-mail notice to you or thirty (30) calendar days following our posting of notice of the changes on our website. These changes will be effective immediately for new users of our Service. If you do not agree to the changes in the Terms, you must notify us prior to the effective date of the changes that you wish to deactivate your account with us. Continued use of our website or Service, following notice of such changes shall indicate your acknowledgement of such changes and agreement to be bound by the terms and conditions of such changes.</p>	
+
+		<h2> Feedback </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">You acknowledge and agrees that any comments, ideas and/or reports provided to MetaMoo (“Feedback”) shall be the property of MetaMoo and you hereby irrevocably transfer and assign to MetaMoo such Feedback, and all associated intellectual property rights, provided however that you shall be free to use such Feedback in the ordinary conduct of your business.</p>
+
+		<h2> Privacy Policy </h2>
+
+		<p style="line-height: 220% ;font-size:1.1em">Our collection and use of your information is governed by our Privacy Policy, available here</p>
+
+	</div>
+
+	
+</div>
+
+<hr>
+
+</body>
+<hr> 
+<footer class="text-center">
+	<a class="text-muted" href="/profile" style="font-size: 1.2em"> Home</a> &nbsp | &nbsp
+	<a class="text-muted" href="/about" style="font-size: 1.2em"> About us</a> &nbsp | &nbsp
+	<a class="text-muted" href="/help" style="font-size: 1.2em"> How it works</a> &nbsp | &nbsp
+	<a class="text-muted" href="http://blog.metamoo.com" style="font-size: 1.2em"> Blog</a> &nbsp | &nbsp
+	<a class="text-muted" href="/termsofservice" style="font-size: 1.2em"> Terms of Service</a> &nbsp | &nbsp
+	<a class="text-muted" href="/privacypolicy" style="font-size: 1.2em"> Privacy Policy</a> 
+
+
+</footer>
+<br>
+</html>

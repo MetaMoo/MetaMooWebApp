@@ -77,6 +77,22 @@ router.get('/howitworks', function(req, res) {
 });
 
 // ---------------------------------------------
+// Show Terms of service page
+// ---------------------------------------------
+router.get('/termsofservice', function(req, res) {
+  	res.render('termsofservice', {user : req.user});
+  	//res.render('index', {user : req.user});
+});
+
+// ---------------------------------------------
+// Show Privacy Policy page
+// ---------------------------------------------
+router.get('/privacypolicy', function(req, res) {
+  	res.render('privacypolicy', {user : req.user});
+  	//res.render('index', {user : req.user});
+});
+
+// ---------------------------------------------
 // Landing page if you are already logged in
 // ---------------------------------------------
 router.get('/homeLoggedIn', isLoggedIn, function(req, res) {
