@@ -16,6 +16,7 @@ td
 	}
 .edit_tr:hover
 	{
-	background:right no-repeat #80C8E5;
+	/*background:right no-repeat #80C8E5;*/
+	background:right no-repeat #E2F2F9;
 	cursor:pointer;
 	}
